@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
  return (
   <>
-   <main className="min-h-screen bg-gradient-to-br from-[#E9EFFF] via-[#E4FFEF] to-[#FFEBF9]">
+   <main className="min-h-screen bg-gradient-to-br from-[#FAF5FF] via-[#FDFDEA] to-[#E3FDFD]">
     <Header />
     {children}
     <Footer />
