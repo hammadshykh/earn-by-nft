@@ -4,6 +4,7 @@ const nextConfig = {
   domains: [
    "sjc.microlink.io",
    "hebbkx1anhila5yf.public.blob.vercel-storage.com",
+   "lh3.googleusercontent.com",
   ],
  },
 };

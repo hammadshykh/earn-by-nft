@@ -26,8 +26,8 @@ export default function TopCollections({
  onMoreClick,
 }: TopCollectionsProps) {
  return (
-  <Card className="border-none bg-white">
-   <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-4">
+  <Card className="bg-transparent pt-0 w-full border-s border-y-0 border-r-0 rounded-none shadow-none">
+   <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-4 pt-0 ">
     <div className="space-y-1">
      <h2 className="text-xl font-bold tracking-tight">TOP COLLECTIONS OVER</h2>
      <p className="text-sm text-muted-foreground">Last 24 Hours</p>
@@ -67,7 +67,7 @@ export default function TopCollections({
          <h3 className="font-medium">{collection.name}</h3>
          <div className="flex items-center gap-1">
           <Image
-           src="/placeholder.svg"
+           src="/images/treasure.png"
            alt="USDT"
            width={16}
            height={16}

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Container } from "./layout/container";
+import Link from "next/link";
 
 export default function ReserveSection() {
  return (
@@ -27,9 +28,11 @@ export default function ReserveSection() {
        Earning income in TreasureNFT is simple: just RESERVE and then TRADE to
        EARN
       </p>
-      <Button className="rounded-full bg-gradient-to-r from-blue-400 to-teal-400 px-8 py-6 text-lg font-semibold text-white hover:opacity-90">
-       SIGN UP NOW
-      </Button>
+      <Link href={"/auth"}>
+       <Button className="rounded-full bg-gradient-to-r from-blue-400 to-teal-400 px-8 py-6 text-lg font-semibold text-white hover:opacity-90">
+        SIGN UP NOW
+       </Button>
+      </Link>
      </div>
     </div>
    </Container>

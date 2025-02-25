@@ -6,21 +6,23 @@ import DiscoverSection from "@/components/discover-section";
 import ReserveSection from "@/components/reserve-section";
 import HeroSection from "@/components/modules/home/hero-section";
 import NFTShowcase from "@/components/nft/nft-showcase";
+import { FeaturedNFTs } from "@/components/modules/home/featured-nft";
 
 export default function HomePage() {
  return (
   <div className="min-h-screen">
    {/* Hero Section */}
    <HeroSection />
+   {/* Featured NFTs Section */}
+   <FeaturedNFTs />
+
    <NFTShowcase />
-   {/* Features Section */}
+
    {/* <FeaturedCollections /> */}
    <ReserveSection />
    <DiscoverSection />
    {/* Video Section */}
    <VideoSection />
-
-   {/* About Section */}
 
    {/* CTA Section */}
    <section className="py-20 px-4 text-center">

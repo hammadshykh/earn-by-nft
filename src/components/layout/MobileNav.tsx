@@ -11,9 +11,11 @@ import {
 } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { useFirebaseAuth } from "@/hooks/use-firebase-auth";
 
 export function MobileNav() {
  const [isOpen, setIsOpen] = useState(false);
+ const { user } = useFirebaseAuth();
 
  const handleClose = () => {
   setIsOpen(false);
@@ -58,6 +60,27 @@ export function MobileNav() {
       Contact Us
      </MobileLink>
     </nav>
+    <div className="flex flex-col gap-4 py-4">
+     <Link
+      href="/marketplace"
+      className="text-sm font-medium hover:text-primary"
+     >
+      Marketplace
+     </Link>
+     {user && (
+      <>
+       <Link
+        href="/dashboard"
+        className="text-sm font-medium hover:text-primary"
+       >
+        Dashboard
+       </Link>
+       <Link href="/team" className="text-sm font-medium hover:text-primary">
+        My Team
+       </Link>
+      </>
+     )}
+    </div>
    </SheetContent>
   </Sheet>
  );

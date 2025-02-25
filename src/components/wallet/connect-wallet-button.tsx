@@ -15,7 +15,11 @@ export function ConnectWalletButton() {
  };
 
  return (
-  <Button variant={connected ? "outline" : "default"} onClick={handleConnect}>
+  <Button
+   variant={connected ? "outline" : "default"}
+   className="bg-transparent hover:bg-transparent text-black ps-2"
+   onClick={handleConnect}
+  >
    {connected ? "0x1234...5678" : "Connect Wallet"}
   </Button>
  );

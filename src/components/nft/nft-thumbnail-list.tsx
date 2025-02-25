@@ -31,7 +31,7 @@ export default function NFTThumbnailList({
      onClick={() => onSelect?.(item)}
     >
      {/* NFT Image */}
-     <div className="relative aspect-square w-24 overflow-hidden rounded-2xl">
+     <div className="relative aspect-square w-36 overflow-hidden rounded-2xl">
       <Image
        src={item.image || "/images/nfts/reserve-nft.avif"}
        alt={item.stakeId}
@@ -41,7 +41,7 @@ export default function NFTThumbnailList({
      </div>
 
      {/* Info Section */}
-     <div className="flex flex-1 items-center justify-between">
+     <div className="flex flex-1 flex-col items-center justify-between">
       <span className="text-base font-medium">{item.stakeId}</span>
 
       <div className="flex items-center gap-2">
@@ -59,7 +59,7 @@ export default function NFTThumbnailList({
        {/* Price Tag */}
        <div className="flex items-center gap-1 rounded-full bg-emerald-500/20 px-2 py-1">
         <Image
-         src="/images/nfts/reserve-nft.avif"
+         src="/images/treasure.png"
          alt="USDT"
          width={16}
          height={16}

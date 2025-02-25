@@ -4,6 +4,7 @@ import { useState } from "react";
 import NFTCard from "../nft/nft-card";
 import NFTThumbnailList from "../nft/nft-thumbnail-list";
 import TopCollections from "../collections/top-collections";
+import { Container } from "../layout/container";
 
 interface NFT {
  id: string;
@@ -122,36 +123,40 @@ export default function NFTShowcase() {
  const [selectedNFT, setSelectedNFT] = useState<NFT>(mockNFTs[0]);
 
  return (
-  <section className="container mx-auto px-4 py-16">
-   <div className="grid gap-8 lg:grid-cols-[2fr,1fr,1fr]">
-    {/* Main NFT Display */}
-    <div className="min-h-[400px]">
-     <NFTCard
-      id={selectedNFT.stakeId}
-      amount={selectedNFT.price.amount}
-      currency={selectedNFT.price.currency}
-      imageUrl={selectedNFT.image}
-      tokenIcon={selectedNFT.stakeId}
-     />
-    </div>
+  <section className="py-16">
+   <Container>
+    <div className="grid gap-8 lg:grid-cols-[3fr,2fr]">
+     {/* Main NFT Display */}
+     <div className="min-h-[400px] flex items-start gap-10">
+      <div className="w-full">
+       <NFTCard
+        id={selectedNFT.stakeId}
+        amount={selectedNFT.price.amount}
+        currency={selectedNFT.price.currency}
+        imageUrl={selectedNFT.image}
+        tokenIcon={selectedNFT.stakeId}
+       />
+      </div>
 
-    {/* NFT Thumbnails */}
-    <div>
-     <NFTThumbnailList
-      items={mockNFTs}
-      selectedId={selectedNFT.id}
-      onSelect={(nft) => setSelectedNFT(nft)}
-     />
-    </div>
+      {/* NFT Thumbnails */}
+      <div>
+       <NFTThumbnailList
+        items={mockNFTs}
+        selectedId={selectedNFT.id}
+        onSelect={(nft) => setSelectedNFT(nft)}
+       />
+      </div>
+     </div>
 
-    {/* Collections Ranking */}
-    <div>
-     <TopCollections
-      collections={mockCollections}
-      onMoreClick={() => console.log("More clicked")}
-     />
+     {/* Collections Ranking */}
+     <div>
+      <TopCollections
+       collections={mockCollections}
+       onMoreClick={() => console.log("More clicked")}
+      />
+     </div>
     </div>
-   </div>
+   </Container>
   </section>
  );
 }

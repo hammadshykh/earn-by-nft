@@ -1,27 +1,32 @@
-import { cn } from "@/lib/utils";
+"use client";
+
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface NavLinksProps {
  className?: string;
 }
 
-const textColorClass = "hover:text-gray-500 transition-colors";
-
 export default function NavLinks({ className }: NavLinksProps) {
+ const links = [
+  { href: "/", label: "Home" },
+  { href: "/about-us", label: "About Us" },
+  { href: "/packages", label: "Packages" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact-us", label: "Contact Us" },
+ ];
+
  return (
-  <nav className={cn("flex items-center gap-8 text-base font-bold", className)}>
-   <Link href={"/"} className={textColorClass}>
-    Home
-   </Link>
-   <Link href={"/"} className={textColorClass}>
-    About Us
-   </Link>
-   <Link href={"/"} className={textColorClass}>
-    Privacy Policy
-   </Link>
-   <Link href={"/"} className={textColorClass}>
-    Contact Us
-   </Link>
+  <nav className={cn("flex items-center gap-6", className)}>
+   {links.map((link) => (
+    <Link
+     key={link.href}
+     href={link.href}
+     className="font-medium text-muted-foreground hover:text-foreground transition-colors"
+    >
+     {link.label}
+    </Link>
+   ))}
   </nav>
  );
 }
